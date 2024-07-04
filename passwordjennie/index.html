@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PasswordJennie</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <h1>PasswordJennie</h1>
+
+  <div class="body-container">
+
+    <h3>
+      This is the internet's <span class="wasteoftime">
+        finest</span> random password generator, please specify 
+      the password length and what it should include below
+    </h3>
+    <span class="arrow">🔻</span>
+
+    <div class="buttons-container"> 
+      
+      <div class="password-length-container">
+        <label for="length" id="password-length">Password Length</label>
+        <input type="number" id="length" value="1" min="1" max="99">
+      </div>
+      
+      <div class="options-container">
+        
+        <div class="labels">
+           <label for="includeLowercase">Lowercase Characters </label>
+           <label for="includeUppercase">Uppercase Characters </label>
+           <label for="includeNumbers">Numeric Characters</label>
+           <label for="includeLowercase">Special Characters </label>
+        </div>
+       
+        <div class="radios">
+          <div>
+            <input type="radio" name="lowercase" id="lowercase_yes">Yes</input>
+            <input type="radio" name="lowercase">No</input>
+          </div>
+  
+          <div>
+            <input type="radio" name="uppercase" id="uppercase_yes">Yes</input>
+            <input type="radio" name="uppercase">No</input>
+          </div>
+  
+          <div>
+            <input type="radio" name="numbers" id="numbers_yes">Yes</input>
+            <input type="radio" name="numbers">No</input>
+          </div>
+  
+          <div>
+            <input type="radio" name="specialchars" id="specialchars_yes">Yes</input>
+            <input type="radio" name="specialchars">No</input>
+          </div>
+
+      </div>
+      </div>
+
+    </div> 
+
+    <button id="generate" onclick="generate()">GENERATE ME A PASSWORD JENNIE</button>
+      <span class="arrow">🔻</span>
+
+    <p id="password_box">sdfs</p>
+    
+    <div class="header-text">
+      <p id="yadayada">In order to protect the things you hold dear from the treacherous and invasive creatures 
+        in this jungle, "THE INTERNET", you must have a strong and unique
+        password for every personal space.
+      </p>
+      <p id="yadayada2"><span>PasswordJennie</span> is here to help you achieve exactly that.
+      </p>
+
+      <p>made by &copy;<a target="_blank" id="mylink" href="https://github.com/wuanzo">wuanzo</a></p>
+      <p>Thanks to <a target="_blank" id="brocode" href="https://www.youtube.com/@BroCodez">BroCode</a> for being such an Awesome Mentor</p>
+    </div>
+
+  </div>
+
+
+  <script src="index.js"></script>
+</body>
+</html>
