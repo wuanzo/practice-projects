@@ -1,0 +1,113 @@
+body{
+  margin: 0;
+}
+
+.body-container{
+  font-family: Kanit, Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-bottom: 10rem;
+}
+
+h1{
+  font-size: 4rem;
+  margin: 2rem;
+}
+
+.numbercontainer{
+  font-size: 2rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.numbercontainer input{
+  font-size: 2rem;
+  width: 100px;
+  height: 36px;
+  text-align: center;
+  margin-left: 12px;
+}
+
+#diceValues{
+  font-size: 1.5rem;
+}
+
+.rollButton-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+#rollButton{
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 8px 12px;
+  background-color: hsl(209, 94%, 51%);
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s, color 0.2;
+}
+
+#diceValues{
+  margin: 0;
+}
+
+#rollButton:hover{
+  background-color: hsla(209, 94%, 51%, 0.801);
+  box-shadow: 2px 2px 8px hsla(0, 0%, 0%, 0.596);
+}
+
+#rollButton:active{
+  background-color: white;
+  color: hsla(209, 94%, 51%, 0.801);
+  box-shadow: none;
+}
+
+#diceImages{
+  margin: 1rem;
+  background-color: hsl(209, 94%, 51%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 496px;
+}
+
+#diceImages img{
+  height: 8rem;
+  margin: 12px;
+  border-radius: 16px;
+}
+
+
+footer{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  background-color: hsl(209, 94%, 51%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p{
+  margin: 4px 0;
+  line-height: 1.2rem;
+  font-size: 1.2rem;
+}
+
+footer a:visited{
+  color: yellow;
+}
+
