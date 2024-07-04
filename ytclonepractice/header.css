@@ -1,0 +1,156 @@
+.header{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  height: 57px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid hsla(0, 0%, 50%, 0.315);
+  z-index: 99;
+}
+
+.left-section{
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-menu{
+  height: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.youtube-logo{
+  height: 20px;
+}
+
+.middle-section{
+  display: flex;
+  align-items: center;
+  margin-left: 58px;
+  flex: 1;
+  max-width: 470px;
+}
+
+.search-box::placeholder{
+  font-size: 16px;
+  color: hsl(0, 0%, 50%);
+  line-height: 16px;
+}
+
+.search-box{
+  font-size: 16px;
+  flex: 1;
+  width: 0;
+  max-width: 358px;
+  padding-left: 12px;
+  height: 40px;
+  border: 1px solid hsla(0, 0%, 50%, 0.438);
+  border-radius: 2px;
+}
+
+
+.search-button{
+  height: 40px;
+  width: 64px;
+  border: 1px solid hsla(0, 0%, 50%, 0.308);
+  margin-left: -1px;
+  margin-right: 9px;
+  border-radius: 2px;
+  background-color: hsl(0, 0%, 96%);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip{
+  position: absolute;
+  background-color: grey;
+  color: white;
+  font-size: 12px;
+  padding: 8px;
+  border-radius: 2px;
+  bottom: -50px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.my-channel-icon:hover .tooltip,
+.notifications-icon:hover .tooltip,
+.apps-icon:hover .tooltip,
+.create-icon:hover .tooltip,
+.voice-search-button:hover .tooltip, 
+.search-button:hover .tooltip{
+  opacity: 1;
+}
+
+.search-button img{
+  height: 24px;
+}
+
+.voice-search-button{
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 96%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.voice-search-button img{
+  height: 24px;
+}
+
+
+.right-section{
+  width: 210px;
+  margin-left: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 24px;
+  padding-left: 4px;
+  flex-shrink: 0;
+}
+
+.right-section img{
+  height: 24px;
+}
+
+.right-section .my-channel{
+  height: 32px;
+  border-radius: 50%;
+}
+
+.right-section .notifications-count{
+  font-size: 10px;
+  position: absolute;
+  background-color: red;
+  color: white;
+  padding: 1px 5px;
+  top: -1px;
+  right: -5px;
+  border-radius: 10px;
+}
+
+
+.create-icon,
+.apps-icon,
+.notifications-icon,
+.my-channel-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+
