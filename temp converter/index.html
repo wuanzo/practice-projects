@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TempTramp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <div class="top">
+
+    <h1>⏲TempTramp</h1>
+  
+    <p class="h2">Here you can convert temperatures between <br><span class="units-header">Celcius, Fahrenheit and Kelvin</span> units</p>
+  
+  </div>
+  <div class="form">
+    <div class="from-box">
+      <label for="from">From: </label>
+      <select name="units" id="from_unit">
+        <option value="celcius" id="celcius1">Celcius</option>
+        <option value="fahrenheit" id="fahrenheit1">Fahrenheit</option>
+        <option value="kelvin" id="kelvin1">Kelvin</option>
+      </select>
+      <label for="input_temp">Value: </label>
+      <input type="number" id="input_temp" placeholder="0">
+    </div>
+
+    <div class="convert-button-container">
+      <button type="button" id="convert-button" onclick="convert()">Convert</button>
+    </div>
+
+    <div class="to-box"> 
+
+      <label for="to">To: </label>
+      <select name="units" id="to_unit">
+        <option value="celcius" id="celcius2">Celcius</option>
+        <option value="fahrenheit" id="fahrenheit2">Fahrenheit</option>
+        <option value="kelvin" id="kelvin2">Kelvin</option>
+      </select>
+  
+      <label for="output_temp">Value: </label>
+      <span id="output_temp">--</span>  
+    </div> 
+  </div>
+
+  <div class="history_container">
+    <p>Attempts at standardized temperature measurement prior to the 17th century were crude at best. For instance in 170 AD, physician Claudius Galenus mixed equal portions of ice and boiling water to create a "neutral" temperature standard. The modern scientific field has its origins in the works by Florentine scientists in the 1600s including Galileo constructing devices able to measure relative change in temperature, but subject also to confounding with atmospheric pressure changes. These early devices were called thermoscopes. The first sealed thermometer was constructed in 1654 by the Grand Duke of Tuscany, Ferdinand II. The development of today's thermometers and temperature scales began in the early 18th century, when Daniel Gabriel Fahrenheit produced a mercury thermometer and scale, both developed by Ole Christensen Rømer. Fahrenheit's scale is still in use, alongside the Celsius and Kelvin scales. </p>
+  </div>
+
+  <footer>
+    Thank You For Using My Website<br>
+    ♥<br>
+    <p>
+      &copy;made by <a target="_blank" href="https://github.com/wuanzo">wuanzo</a>
+    </p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
