@@ -30,7 +30,6 @@ h1{
 .wasteoftime{
   font-style: italic;
   font-weight: 400;
-  text-decoration: underline;
 }
 
 h3{
@@ -110,23 +109,28 @@ h3{
 
 #password_box{
   margin: 0;
-  margin-bottom: 90px;
+  margin-bottom: 64px;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 2px;
-  width: 100%;
-  height: auto;
+  width: 600px;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 #yadayada {
   text-align: justify;
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1.8rem;
   margin: 0;
 }
 
+#yadayada span{
+  text-decoration: underline;
+}
+
 #yadayada2 span{
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-style: italic;
   text-decoration: underline;
   margin-right: 4px;
@@ -136,4 +140,12 @@ h3{
   font-size: 1.2em;
   line-height: 1.8rem;
   margin: 12px 0;
+}
+
+.footer-text{
+  margin-bottom: 12px;
+}
+
+#mylink, #brocode {
+  text-decoration: none;
 }
