@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rpsChamps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  
+  <header>
+    <h1>blink_RPS</h1>
+  </header>
+
+  <main>
+
+    <div class="scorecontainer">
+
+      <div class="yourscorecontainer">
+        <span>Score: </span><span id="yourscore">0</span>
+      </div>
+      <div class="compscorecontainer">
+        <span>Score: </span><span id="compscore">0</span>
+      </div>
+
+    </div>
+
+    <div class="game">
+
+      <div class="left_side">
+        <div class="buttons-container">
+          <button class="buttons" onclick="rock()" id="rock" value="0">
+            <img src="images/rock.png">
+          </button>
+          <button class="buttons" onclick="paper()" id="paper" value="1">
+            <img src="images/paper.png">
+          </button>
+          <button class="buttons" onclick="scissors()" id="scissors" value="2">
+            <img src="images/scissors.png">
+          </button>
+        </div>
+
+        <div class="left-arrow"><span>▶</span></div>
+  
+        <div id="chosenPicture">
+          
+        </div>
+        
+  
+      </div>
+     
+      <div class="middle_section">
+         <span>🆚</span>
+      </div>
+  
+      <div class="right_side">
+        
+        <div id="computerMovePic">
+        
+        </div>
+  
+        <div class="devious_comp">
+            <span>◀</span><img src="images/evilcomputer.webp">
+        </div>
+  
+      </div>
+
+
+    </div>  
+
+
+    <div class="captions">
+      <span>Human</span>
+      <span>Blink</span>
+    </div>
+    
+
+    <div class="results">
+
+      <div class="youchosebox">
+
+        <p>YOUR MOVE: <p>
+        <p id="youchose">--</p>
+        <div id="playerwin"></div>
+        
+      </div>
+
+      <div class="emptyspace">
+
+      </div>
+
+      <div class="computerchosebox">
+        <p>BLINK'S MOVE: </p>
+        <p id="compchose">--</p>
+        <div id="computerwin"></div>
+      </div>
+
+    </div>
+
+
+    <div class="resetbtncontainer">
+      <button onclick="reset()" id="resetbtn">RESET</button>
+    </div>
+
+  </main>
+
+
+  <script src="index.js"></script>
+</body>
+</html>
