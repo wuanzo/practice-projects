@@ -1,0 +1,124 @@
+*{
+    font-family: "Azeret mono", monospace;
+    font-weight: 700;
+}
+
+body{
+    font-weight: 400;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(0, 0%, 90%);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.container{
+    max-width: 400px;
+    background-color: cyan;
+    background-color: black;
+    overflow: hidden;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+.display{
+    width: 92%;
+    border: none;
+    font-size: 4rem;
+    color: white;
+    background-color: hsl(0, 0%, 40%);
+    margin-top: 25px;
+    text-align: right;
+    padding: 16px;
+}
+
+.display:focus{
+    outline: none;
+}
+
+#keys-container{
+    display: flex;
+    justify-content: center;
+}
+
+#keys{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 24px;
+}
+
+button{
+    height: 80.5px;
+    width: 100%;
+    font-size: 3rem;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    background-color: hsl(0, 0%, 40%);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.15s;
+}
+
+button:hover{
+    background-color: hsl(0, 0%, 50%);
+}
+
+button:active{
+    background-color: hsl(0, 0%, 60%);
+}
+
+
+.operator{
+    background-color: hsl(39 , 100%, 50%);
+}
+
+.operator:hover{
+    background-color: hsl(39, 100%, 60%);
+}
+
+.operator:active{
+    background-color: hsl(39, 100%, 70%);
+}
+
+.clear{
+    background-color: hsl(0, 100%, 50%);
+}
+
+.clear:hover{
+    background-color: hsl(0, 100%, 60%);
+}
+
+.clear:active{
+    background-color: hsl(0, 100%, 70%);
+}
+
+.equals{
+    background-color: hsl(180, 100%, 25%);
+}
+
+.equals:hover{
+    background-color: hsl(180, 100%, 35%);
+}
+
+.equals:active{
+    background-color: hsl(180, 100%, 45%);
+}
+
+
+
+
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+}
