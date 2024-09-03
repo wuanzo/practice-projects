@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            #box1, #box2{
+                width: 100px;
+                height: 100px;
+            }
+            #box1-container{
+                background-color: lime;
+                animation: y-axis 5s linear 0s infinite alternate;
+            }
+
+            #box1{
+                background-color: lightblue;
+                animation: x-axis 5s linear infinite alternate;
+            }
+
+
+            #box2{
+                background-color: lightpink;
+            }
+
+            @keyframes x-axis{
+                from{
+                    transform: translateX(0);
+                }
+                to{
+                    transform: translateX(calc(100vw - 200px));
+                }
+            }
+
+            @keyframes y-axis{
+                0%, 100%{
+                    transform: translateY(0);
+                }
+                50%{
+                    transform: translateY(calc(100vh - 200px));
+                }
+            }
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <div id="box1-container">
+
+            <div id="box1">box 1</div>
+        </div>
+        <div id="box2">box 2</div>
+    </body>
+</html>

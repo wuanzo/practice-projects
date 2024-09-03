@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Clash RPS</title>
+    </head>
+    <body>
+        <div class="main-container">
+
+            <div>
+                <h1 id="game-title">Clash RPS</h1>
+            </div>
+    
+            <div id="moves-container">
+                <div>
+                    <button class="moves" onclick="playGame('rock')"><span id="rock">👊🏻</span></button>
+                </div>
+                <div>
+                    <button class="moves" onclick="playGame('paper')"><span>🖐🏻</span></button>
+                </div>
+                <div>
+                    <button class="moves" onclick="playGame('scissors')"><span>✌🏻</span></button>
+                </div>
+    
+                <!-- helping text -->
+                 <div id="blinkingText">
+                    <span>pick your move</span>
+                    <span>👉🏻</span>
+                 </div>
+                 
+            </div>
+    
+            <div class="display">
+                <div>
+                    <div>Player</div>
+                    <div id="computerMoveText">Computer<span id="compEmotions"></span></div>
+                </div>
+                <div>
+                    <div>: <span id="playerMoveDisplay">--</span></div>
+                    <div>: <span id="computerMoveDisplay">--</span></div>
+                </div>
+            </div>
+    
+            <div class="score">
+                <div>
+                    <div>Your Score </div>
+                     <div>💻 Score </div>
+                    
+                </div>
+                <div>
+                    <div>: <span id="playerScoreDisplay" class="greenText">00</span></div>
+                    <div id="alignmentHell">: <span class="redText" id="computerScoreDisplay">00</span></div>   
+                 </div>
+            </div>
+    
+            <div id="resultDisplay">
+                <!-- this is the result screen -->
+            
+            </div>
+            
+            <div id="surrender-msg-container">   
+                <div>
+                    <h3 id="surrender-msg">
+                        "Oh man! look at you struggling<br> you should surrender lol" - 💻
+                    </h3>
+                </div>
+                <div id="surrender-choices">
+                    <div>
+                        <a href="http://127.0.0.1:5500/index2.html" target="_blank">
+                            <button id="surrender" onclick="surrender()">Surrender</button>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <button id="tauntComputer">😈Taunt</button>
+                </div>
+            </div>
+            
+            <!-- special button -->
+            <button id="rgbBtn" onclick="rgbBorders()">RGB?</button>
+            
+
+            
+            <script src="index.js">
+            </script>
+        </div>
+
+        
+
+    </body>
+
+
+
+
+</html>

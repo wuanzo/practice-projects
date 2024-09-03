@@ -9,7 +9,7 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: hsla(0, 0%, 70%, 0.356);
+  background-color: hsla(0, 0%, 0%, 0.034);
 }
 
 p{
