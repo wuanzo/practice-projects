@@ -1,17 +1,16 @@
 #text{
     font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.4);
     word-spacing: 2px;
     letter-spacing: 1px;
 }
 
 #text span.correct {
-    color: #00db33;
+    color: var(--correctClr, #e9ecf0);
 }
 
 #text span.incorrect{
-    color: rgb(255, 0, 0);
-    background-color: rgba(255, 0, 0, 0.1); 
+    color: #DA3333;
+    background-color: #da33331a;
 }
 
 #text span{
@@ -25,7 +24,7 @@
     bottom: 0;
     height: 100%;
     width: 2px;
-    background-color: #E2B714;
+    background-color: var(--activeClr, #F44C7F);
     animation: blink 1s ease-in-out infinite;
     opacity: 0;
 }
@@ -40,6 +39,11 @@
 body{
     width: 100%;
     max-width: 768px;
+}
+
+#wrapper{
+    border-width: 1px;
+    border-style: solid;
 }
 
 #input-box:focus{
