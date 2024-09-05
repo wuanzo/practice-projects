@@ -1,3 +1,14 @@
+:root{
+    --mainClr: #F44C7F;
+
+    --activeClr: var(--mainClr);
+    --correctClr: #e9ecf0;
+    --statsTextClr: #939EAE;
+    --statsNum: var(--mainClr);
+    --creditLinks: var(--mainClr);
+}
+
+
 #text{
     font-size: 1.5rem;
     word-spacing: 2px;
@@ -5,12 +16,12 @@
 }
 
 #text span.correct {
-    color: var(--correctClr, #e9ecf0);
+    color: var(--correctClr);
 }
 
 #text span.incorrect{
-    color: #DA3333;
-    background-color: #da33331a;
+    color: rgb(218, 51, 51);
+    background-color: rgba(218, 51, 51, 0.051);
 }
 
 #text span{
@@ -24,7 +35,7 @@
     bottom: 0;
     height: 100%;
     width: 2px;
-    background-color: var(--activeClr, #F44C7F);
+    background-color: var(--activeClr);
     animation: blink 1s ease-in-out infinite;
     opacity: 0;
 }
@@ -46,11 +57,42 @@ body{
     border-style: solid;
 }
 
-#input-box:focus{
+#inputField:focus{
     outline: none;
     color: black;
 }
 
-#input-box{
+#inputField{
+    position: absolute;
+    z-index: -99;
+    opacity: 0;
+}
 
+.statsText{
+    color: var(--statsTextClr);
+    font-weight: 500;
+}
+
+.statsNum{
+    color: var(--statsNum);
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.creditLinks{
+    font-style: italic;
+    text-decoration: underline;
+}
+
+#timerTag{
+    background-color: transparent;
+}
+
+#timerTag .esse{
+    font-size: 1rem;
+    color: white;
+}
+
+#timerTag option{
+    font-size: 1rem;
 }

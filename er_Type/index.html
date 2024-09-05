@@ -18,17 +18,17 @@
 </head>
 
 
-<body class="font-suse mx-auto">
+<body class="font-suse mx-auto flex flex-col gap-[2rem] relative mt-8">
     
     <!-- just whatever -->
-    <div class="text-center my-8">
+    <div class="text-center my-8" id="theHeader">
               
         <span id="title" class="text-6xl text-red-500 relative">
 
             <div class="absolute -right-3 -top-3">
                 <label class="swap swap-rotate">
                     <!-- this hidden checkbox controls the state -->
-                    <input type="checkbox" class="theme-controller" value="dark" checked/>
+                    <input type="checkbox" class="theme-controller" value="dark"/>
                     
                     <!-- sun icon -->
                     <svg
@@ -50,7 +50,7 @@
                     </label>
             </div>
 
-            erType
+            er_Type
         </span>
         
 
@@ -58,18 +58,15 @@
 
     </div>
 
-
-    <!-- wrapper -->
+    <!-- inputfield -->
     <input type="text" class="bg-white" id="inputField">
 
-    
-
-    
+    <!-- wrapper -->
     <div id="wrapper" class="rounded-2xl mx-auto px-6 pt-4">
         <!-- textbox -->
         <div class"">
 
-            <div class=" overflow-auto max-h-[400px]">
+            <div class="overflow-auto max-h-[400px] flex flex-shrink-1">
                 <p class="" id="text"></p>
             </div>
 
@@ -81,19 +78,20 @@
         <div class="flex justify-between items-center pb-4">
 
             <div class="">
-                <p>Timer: <span id="timerTag" class="text-xl font-bold">60</span>s</p>  
+                <p><span class="statsText">Timer: </span><span id="timerTag" class="statsNum">60</span> s</p>
+                
             </div>
             <div class="divider divider-horizontal h-4 m-0 self-center"></div>
             <div class="">
-                <p>Mistakes: <span id="mistakeTag" class="text-xl font-bold">0</span></p>
+                <p><span class="statsText">Mistakes: </span><span id="mistakeTag" class="statsNum">0</span></p>
             </div>
             <div class="divider divider-horizontal h-4 m-0 self-center"></div>
             <div class="">
-                <p>WPM: <span id="wpmTag" class="text-xl font-bold">0</span></p>
+                <p><span class="statsText">WPM: </span><span id="wpmTag" class="statsNum">0</span></p>
             </div>
             <div class="divider divider-horizontal h-4 m-0 self-center"></div>
             <div class="">
-                <p>ACC: <span id="accTag" class="text-xl font-bold">0</span></p>
+                <p><span class="statsText">ACC: </span> <span id="accTag" class="statsNum">0</span></p>
             </div>
             <div class="divider divider-horizontal h-4 m-0 self-center"></div>
 
@@ -103,13 +101,14 @@
 
     </div>
 
+    <!-- footer -->
+    <footer class="flex flex-col items-end text-xs">
+        <p>made by @<a target="_blank" class="creditLinks" href="https://github.com/wuanzo">wuanzo</a></p>
 
+        <p>inspiration from @<a target="_blank" class="creditLinks" href="https://www.youtube.com/@CodingNepal">CodingNepal</a></p>
+    </footer>
 
-
-
-
-
-
+    <!-- <p class="flex justify-center mt-12">❤ Thanks for stopping by ❤</p> -->
 
 
     <script src="words.js"></script>

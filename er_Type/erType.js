@@ -23,7 +23,6 @@ tryAgainBtn.addEventListener('click', () => location.reload());
 
 text.addEventListener('click', () => {
     inputField.focus();
-    characters[charIndex].classList.add('active');
 })
 
 function randomWords() {
@@ -52,19 +51,61 @@ function startTyping() {
                 const cursorPos = inputField.selectionStart;
                 const textBefore = inputField.value.slice(0, cursorPos);
                 const textAfter = inputField.value.slice(cursorPos);
-    
-                const newTextBefore = textBefore.replace(/\b\w+\s*$/, '');
-    
+
+                let lastNonSpaceIndex = textBefore.length - 1;
+                while(lastNonSpaceIndex >= 0 && textBefore[lastNonSpaceIndex] === ' '){
+                    lastNonSpaceIndex--;
+                }
+
+                let lastSpaceIndex = lastNonSpaceIndex;
+                while(lastSpaceIndex >= 0 && textBefore[lastSpaceIndex] !== ' '){
+                    lastSpaceIndex--;
+                }
+
+                const newTextBefore = textBefore.slice(0, lastSpaceIndex + 1);
                 inputField.value = newTextBefore + textAfter;
-    
+
                 inputField.selectionStart = newTextBefore.length;
                 inputField.selectionEnd = newTextBefore.length;
+            
+                let newCharIndex = newTextBefore.length;
+
+                updateCharIndex(newCharIndex, charIndex);
+                charIndex = newCharIndex;
+
+                handleActiveClassUpdate();
+
+                console.log(charIndex);
             }
+
+                // -------------------------------------------------------
+                // using regex to remove last word
+                // -------------------------------------------------------
+                // const newTextBefore = textBefore.replace(/\b\w+\s*$/, '');
+                // const newTextBefore = textBefore.replace(/(\S+)\s*$/, '');
+
+    
+                // inputField.value = newTextBefore + textAfter;
+    
+                // inputField.selectionStart = newTextBefore.length;
+                // inputField.selectionEnd = newTextBefore.length;
+
+                // const newCharIndex = newTextBefore.length;
+                
+                // for(let i = newCharIndex; i < charIndex; i++){
+                //     characters[i].classList.remove('correct', 'incorrect');
+                // }
+                // charIndex = newCharIndex;
+                // console.log(charIndex)
+                // ---------------------------------------------------------
+            
+        
     
             if(ev.key === 'Backspace'){
                 if(charIndex > 0){
                     charIndex--;
                     characters[charIndex].classList.remove('correct', 'incorrect');
+                    handleActiveClassUpdate();
                 }
             }
     
@@ -85,19 +126,34 @@ function startTyping() {
                 charIndex++;
 
                 displayStats();
-            }
-            characters.forEach(span => span.classList.remove('active'));
-            if(charIndex < characters.length - 1) {
-                characters[charIndex].classList.add('active');
+                handleActiveClassUpdate();
             }
 
         } else {
             clearInterval(timerInterval);
             inputField.disabled = true;
         }
-
     })
 }
+
+function handleActiveClassUpdate() {
+    characters.forEach(span => span.classList.remove('active'));
+
+    // Place the active class exactly at charIndex
+    if (charIndex < characters.length) {
+        characters[charIndex].classList.add('active');
+    }
+}
+
+function updateCharIndex(newCharIndex, oldCharIndex) {
+    let bigIndex = Math.max(newCharIndex, oldCharIndex);
+    let smolIndex = Math.min(newCharIndex, oldCharIndex);
+
+    for(let i = smolIndex; i < bigIndex; i++){
+        characters[i].classList.remove('correct', 'incorrect');
+    }
+}
+
 
 function displayStats() { 
     acc = Math.round((correctChars / (correctChars + mistakes)) * 100);
@@ -122,12 +178,22 @@ function timer() {
     }
 }
 
+function activeClassHandler(){
+    inputField.onfocus = () => {
+        characters[charIndex].classList.add('active');
+    }
+    inputField.onblur = () => {
+        characters.forEach(span => span.classList.remove('active'));
+    }
+}
+
 
 
 randomWords();
 const characters = text.querySelectorAll('span');
-characters[charIndex].classList.add('active');
 inputField.focus();
+characters[charIndex].classList.add('active');
+activeClassHandler();
 startTyping();
 
 

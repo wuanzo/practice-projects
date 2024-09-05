@@ -6,10 +6,10 @@ const eight08Theme = {
     blinker: "#F44C7F",
     textGhost: "#ffffff66",
     textCorrect: "#e9ecf0",
+    statsText: "#939EAE",
+    statsNum: "#F44C7F",
 }
 //-------------------------------------------
-
-
 //-------------------------------------------
 // paper theme
 //
@@ -18,6 +18,8 @@ const paperTheme = {
     blinker: "#535353",
     textGhost: "#B2B2B2",
     textCorrect: "#444444",
+    statsText: "#535353",
+    statsNum: "#444444",
 }
 
 //------------------------------------------
@@ -28,25 +30,27 @@ const paperTheme = {
 const themeToggle = document.querySelector('.theme-controller');
 const wrapper = document.querySelector('#wrapper');
 const title = document.querySelector('#title');
-const active = document.querySelector('#text span.active');
+const rootThemes = document.querySelector(':root');
 
-
-
-themeToggle.addEventListener('click', () => {
+function themeDetect(){
     if(themeToggle.checked) {
         themeDark();
     } else {
         themeLight();
-        
     }
-})
+}
+themeDetect();
+themeToggle.addEventListener('click', themeDetect);
 
 function themeDark(){
     title.style.color = eight08Theme.blinker;
     wrapper.style.backgroundColor = eight08Theme.bg;
     wrapper.style.borderColor = paperTheme.blinker;
     text.style.color = eight08Theme.textGhost;
-    active.style.setProperty('--activeClr', eight08Theme.blinker);
+    rootThemes.style.setProperty('--correctClr', eight08Theme.textCorrect);
+    rootThemes.style.setProperty('--statsTextClr', eight08Theme.statsText);
+    rootThemes.style.setProperty('--mainClr', eight08Theme.blinker);
+    
    
 }
 function themeLight() {
@@ -54,10 +58,11 @@ function themeLight() {
     wrapper.style.backgroundColor = paperTheme.bg;
     wrapper.style.borderColor = paperTheme.blinker;
     text.style.color = paperTheme.textGhost;
-    active.style.setProperty('--activeClr', paperTheme.blinker);
+    rootThemes.style.setProperty('--correctClr', paperTheme.textCorrect);
+    rootThemes.style.setProperty('--statsTextClr', paperTheme.statsText);
+    rootThemes.style.setProperty('--mainClr', paperTheme.blinker);
 }
 
-themeDark();
 
 
 // adding the correct class themes
