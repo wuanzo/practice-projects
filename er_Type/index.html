@@ -18,17 +18,17 @@
 </head>
 
 
-<body class="font-suse mx-auto flex flex-col gap-[2rem] relative mt-8">
+<body class="font-suse mx-auto flex flex-col relative mt-8">
     
     <!-- just whatever -->
-    <div class="text-center my-8" id="theHeader">
+    <div class="text-center mb-12" id="theHeader">
               
         <span id="title" class="text-6xl text-red-500 relative">
 
             <div class="absolute -right-3 -top-3">
                 <label class="swap swap-rotate">
                     <!-- this hidden checkbox controls the state -->
-                    <input type="checkbox" class="theme-controller" value="dark"/>
+                    <input type="checkbox" class="theme-controller" value="dark" checked/>
                     
                     <!-- sun icon -->
                     <svg
@@ -54,19 +54,28 @@
         </span>
         
 
-        <p class="my-2">the best place to waste time thinking you're doing something cool or significant</p>
+        <p class="my-2">the best place to waste time in thinking you're doing something cool or significant</p>
 
     </div>
 
     <!-- inputfield -->
     <input type="text" class="bg-white" id="inputField">
 
+    <div id="timeButtons" class="self-end flex gap-4 text-sm">
+    
+        <span class="hover:cursor-pointer" value="15">15</span>
+        <span class="hover:cursor-pointer" value="30">30</span>
+        <span class="hover:cursor-pointer" value="45">45</span>
+        <span class="hover:cursor-pointer" value="60">60</span>
+        
+    </div>
+
     <!-- wrapper -->
-    <div id="wrapper" class="rounded-2xl mx-auto px-6 pt-4">
+    <div id="wrapper" class="rounded-2xl mx-auto px-6 pt-4 my-4">
         <!-- textbox -->
         <div class"">
 
-            <div class="overflow-auto max-h-[400px] flex flex-shrink-1">
+            <div class="overflow-auto flex">
                 <p class="" id="text"></p>
             </div>
 

@@ -39,6 +39,7 @@ function themeDetect(){
         themeLight();
     }
 }
+themeToggle.checked = true;
 themeDetect();
 themeToggle.addEventListener('click', themeDetect);
 
@@ -50,6 +51,9 @@ function themeDark(){
     rootThemes.style.setProperty('--correctClr', eight08Theme.textCorrect);
     rootThemes.style.setProperty('--statsTextClr', eight08Theme.statsText);
     rootThemes.style.setProperty('--mainClr', eight08Theme.blinker);
+    timeButtons.forEach(button => {
+        button.style.color = eight08Theme.blinker;
+    })
     
    
 }
@@ -61,11 +65,10 @@ function themeLight() {
     rootThemes.style.setProperty('--correctClr', paperTheme.textCorrect);
     rootThemes.style.setProperty('--statsTextClr', paperTheme.statsText);
     rootThemes.style.setProperty('--mainClr', paperTheme.blinker);
+    timeButtons.forEach(button => {
+        button.style.color = paperTheme.blinker;
+    })
 }
-
-
-
-// adding the correct class themes
 
 
     

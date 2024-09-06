@@ -5,11 +5,23 @@ const mistakeTag = document.querySelector('#mistakeTag');
 const wpmTag = document.querySelector('#wpmTag');
 const accTag = document.querySelector('#accTag');
 const timerTag = document.querySelector('#timerTag');
+const timeButtons = document.querySelectorAll('#timeButtons span');
 
-const wordCount = 100;
-const maxTime = 60;
-
+let wordCount = 100;
+let maxTime = 60;
 let timeLeft = maxTime;
+
+
+timeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        maxTime = parseInt(button.innerHTML);
+        timeLeft = maxTime;
+        timerTag.innerHTML = maxTime;
+    })
+})
+
+
+
 let timerInterval;
 let charIndex = 0;
 let correctChars = 0;
@@ -139,7 +151,6 @@ function startTyping() {
 function handleActiveClassUpdate() {
     characters.forEach(span => span.classList.remove('active'));
 
-    // Place the active class exactly at charIndex
     if (charIndex < characters.length) {
         characters[charIndex].classList.add('active');
     }
