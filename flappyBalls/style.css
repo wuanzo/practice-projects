@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+ *,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+
+*{
+    font-family: "Press Start 2P", system-ui;
+}
+
+:root{
+    --groundHeight: 20px;
+    --groundMovingSpeed: 2000ms;
+
+    --jumpHeight: -70px;
+    --jumpDuration: 500ms;
+
+    --obstacleHeight: 30px;
+    --obstacleWidth: 8px;
+    --obstacleDistance: 100%;
+    --obstacleDistance2: calc(100% + var(--obstacleWidth));
+
+    --scoreFromTop: 12rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;        
+}
+
+body{
+    height: 100vh;
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.container{
+    width: 700px;
+    max-width: 100%;
+    height: 200px;
+    max-height: 100%;
+    margin-inline: auto;
+    position: relative;
+    overflow: hidden;
+    position: relative;
+}
+
+.box{
+    width: 40px;
+    height: 40px;
+    background: cyan;
+    background-size: cover;
+    position: absolute;
+    left: 4%;
+    bottom: var(--groundHeight);
+    z-index: 2;
+}
+
+.jump {
+    animation: jump var(--jumpDuration) ease-out;
+}
+
+@keyframes jump{
+    50%{
+        transform: translateY(var(--jumpHeight));
+    }
+}
+
+.ground-container{
+    width: 200%;
+    display: flex;
+    height: var(--groundHeight);
+    position: absolute;
+    bottom: 0;
+}
+
+.groundMovingAnimation{
+    animation: moveGround var(--groundMovingSpeed) infinite linear;
+}
+.ground{
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+    position: relative;
+}
+
+
+
+@keyframes moveGround{
+    100%{
+        transform: translateX(-50%);
+    }
+}
+
+
+
+.obstacle{
+    position: absolute;
+    bottom: var(--groundHeight);
+    left: var(--obstacleDistance);
+    width: 0;
+    height: 0;
+    border-left: var(--obstacleWidth) solid transparent;
+    border-right: var(--obstacleWidth) solid transparent;
+    border-bottom: var(--obstacleHeight) solid gray;
+}
+
+.obstacle2{
+    position: absolute;
+    bottom: var(--groundHeight);
+    left: var(--obstacleDistance2);
+    width: var(--obstacleWidth);
+    height: var(--obstacleHeight);
+    background: url(spike.png);
+    background-size: cover;
+}
+
+.obstacleAnimation{
+    animation: obstacleAnimation var(--groundMovingSpeed) linear forwards;
+}
+@keyframes obstacleAnimation{
+    100%{
+        left: 0;
+    }
+}
+
+#scoreCount, #highScore{
+    position: absolute;
+    font-size: 2rem;
+}
+
+#highScore{
+    right: 0;
+}
+
+.btnContainer{
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btnContainer button{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 6px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.btnContainer button:first-child{
+    background-color: lime;
+}
+
+.disabledBtn{
+    background-color: rgba(77, 77, 77, 0.082) !important;
+}
+
+.btnContainer button:last-child{
+    background-color: rgba(77, 77, 77, 0.151);
+}
+
+#my_modal{
+    border: none;
+    border-radius: 8px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#my_modal .modalContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 500px;
+    height: 300px;
+    max-height: 100%;
+    max-width: 100%;
+    gap: 2.5rem;
+}
+
+#scoreContainerModal{
+    font-size: 1.2rem;
+}
+#scoreModal{
+    color: lime;
+}
+#highScoreModal{
+    color: red;
+}
+
+#gameOverText{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#scoreContainerModal{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 0.6rem;
+}
+
+#closeForm{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
